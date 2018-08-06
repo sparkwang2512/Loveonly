@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<!--	Response web-->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<title>Loveonly</title>
+	<style>
+		/*		global*/
+
+		* {
+			box-sizing: border-box;
+			border: 0px;
+		}
+
+		html {
+			height: 100%;
+		}
+
+		body {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.428571429;
+		}
+
+		ul,
+		li {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		h1,
+		h2,
+		h3 {
+			text-align: center;
+			font-family: 'Nunito', sans-serif;
+		}
+
+		.hidden {
+			display: none;
+		}
+
+		a:hover {
+			color: rgb(229, 229, 229);
+		}
+
+		a:focus {
+			outline: thin dotted #333;
+			outline: 5px auto -webkit-focus-ring-color;
+			outline-offset: -2px;
+			color: #2a6496;
+			text-decoration: underline;
+		}
+
+		button:hover {
+			background-color: #CCCCCC;
+		}
+
+		button {
+			position: relative;
+			top: 30px;
+			background-color: #E66886;
+			padding: 6px;
+			box-shadow: 0px 0px 3px 3px #ccc;
+			-webkit-transition: all .5s;
+			-moz-transition: all .5s;
+			-ms-transition: all .5s;
+			-o-transition: all .5s;
+			transition: all .5s;
+		}
+
+		/*		top line*/
+
+		#top-line {
+			background-color: #E66886;
+			height: 1px;
+		}
+
+		/*		navgation bar*/
+
+		nav {
+			border-bottom: 5px groove;
+			border-image: linear-gradient(black, white) 10;
+			text-align: center;
+			background-color: #ffffff;
+			position: relative;
+			width: 100%;
+			height: 110px;
+			float: none;
+			z-index: 9999;
+		}
+
+		.sticky {
+			position: fixed;
+			width: 100%;
+			display: inline-block;
+			top: 0;
+			height: 100px;
+			opacity: 0.9;
+			z-index: 9999;
+		}
+
+		div>a {
+			text-decoration: none;
+			display: inline-block;
+			margin: 5px 12px;
+			color: #828383;
+			font-family: 'Cinzel', serif;
+			-webkit-transition: all .5s;
+			-moz-transition: all .5s;
+			-ms-transition: all .5s;
+			-o-transition: all .5s;
+			transition: all .5s;
+		}
+
+
+		nav>div {
+			display: block;
+			width: auto;
+			padding-top: 12px;
+			font-size: 20px;
+		}
+
+		#navlist {
+			text-align: center;
+			position: absolute;
+			width: 130px;
+			height: 650px;
+			right: 33%;
+			background-color: white;
+		}
+
+		#navlist>ul>li {
+			display: block;
+			text-align: center;
+			font-family: 'Cinzel', serif;
+			width: 100%;
+			margin-top: 50px;
+		}
+
+		.menu-change {
+			display: none;
+		}
+
+		li>a {
+			color: #828383;
+		}
+
+		/*		brand*/
+
+		#brand {
+			width: auto;
+			height: 1250px;
+			background-image: url(img/ringdiamondlove.png);
+			background-size: cover;
+		}
+
+		/*		footer*/
+
+		Footer {
+			height: 400px;
+			background-color: white;
+		}
+
+		#btnline {
+			height: 20px;
+			background-color: #E66886;
+		}
+
+		/*		screen*/
+
+		@media screen and (min-width: 1024px) {
+			#banner-h2 {
+				position: relative;
+				left: 130px;
+			}
+			#Introduction>h1 {
+				position: relative;
+				top: 25%;
+				left: 25%;
+			}
+			#Inlove>div {
+				left: 25%;
+			}
+			#LADI>div {
+
+				right: 20%;
+			}
+			.button-hidden {
+				display: none;
+			}
+
+			.float-left {
+				position: absolute;
+				left: 20px;
+				width: 220px;
+			}
+			.button-pop {
+				position: absolute;
+				display: block;
+				right: 50px;
+				top: 25%;
+				width: 20px;
+				height: 20px;
+				cursor: pointer;
+			}
+/*			brand*/
+			#brand1 {
+				position: relative;
+				top: 20%;
+				left: 10%;
+				text-align: left;
+			}
+			#brand2 {
+				width: 40%;
+				min-width: 400px;
+				max-width: 800px;
+				position: relative;
+				left: 60%;
+			}
+
+		}
+
+		@media screen and (max-width: 1023px) {
+			#menu {
+				display: none;
+			}
+			#navbutton {
+				position: absolute;
+				display: block;
+				right: 10px;
+				top: 25%;
+				width: 20px;
+				height: 20px;
+				cursor: pointer;
+			}
+			#Introduction>h1 {
+				position: relative;
+				top: 15%;
+			}
+			#LADI-img {
+				display: block;
+				position: relative;
+				left: 10%;
+				top: 80%;
+				width: 100%;
+			}
+			.column {
+				-ms-flex: 100%;
+				flex: 100%;
+				max-width: 100%;
+			}
+		}
+/*		brand*/
+		#brand1{
+			position: relative;
+			top:10%;
+		}
+		#brand2{
+			position: relative;
+			top:15%;
+		}
+
+		/*
+		@media screen and (max-width: 800px) {
+			.column {
+				-ms-flex: 50%;
+				flex: 50%;
+				max-width: 50%;
+			}
+		}
+*/
+
+		@media screen and (min-width: 1800px) {}
+
+	</style>
+	<!-- jQuery -->
+	<script src="./jquery/jquery-3.3.1.js"></script>
+	<!--slickjs-->
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+	<!--font awesome-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<!--Bootstrap CSS-->
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<!--Bootstrap JavaScript -->
+	<script src="./js/bootstrap.min.js"></script>
+	<!--	cinzel fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+	<!--	avenir fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+	<!--	Didot-->
+	<link href="https://fonts.googleapis.com/css?family=GFS+Didot" rel="stylesheet">
+	<!--	slickcss-->
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<!--	theme-->
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+</head>
+
+<body>
+	<nav id="cos-nav">
+		<div id="top-line"></div>
+		<div id="Logo"><img src="./img/logoblack.jpg" alt="logo" height="35px;"></div>
+		<div id="menu" class="container-fluid">
+
+			<div>
+				<a href="index.html">HOME</a>
+				<a href="brandstory.html">BRAND STORY</a>
+				<a href="whydiamond.html">INVEST</a>
+				<a href="pinkpaper.html">PINK PAPER</a>
+				<a href="partners.html">PARTNERS</a>
+				<a href="news.html">NEWS</a>
+				<a href="FAQs.html">FAQS</a>
+			</div>
+		</div>
+		<div id="navbutton" class="button-hidden">
+			<i class="fas fa-bars"></i>
+			<div hidden id="navlist">
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="brandstory.html">BRAND STORY</a></li>
+					<li><a href="whydiamond.html">INVEST</a></li>
+					<li><a href="pinkpaper.html">PINK PAPER</a></li>
+					<li><a href="partners.html">PARTNERS</a></li>
+					<li><a href="news.html">NEWS</a></li>
+					<li><a href="FAQs.html">FAQS</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+
+	<div id="brand" class="container-fluid">
+		<div id="brand1">
+			<h1 style=" text-align: left; line-height: 10px;font-family: Cinzel,serif; color: #646666; word-spacing: 10px; letter-spacing: 3px; font-size: 4em;">WE ARE <br><img src="./img/logowhite.jpg" alt="logo" style="margin: 0; padding: 0; border: 0; width: 70%; min-width: 400px; max-width: 600px;"></h1>
+		</div>
+		<div id="brand2" style="background-color: rgb(234, 208, 211, 0.7); padding: 10px;">
+			<h4 style="font-family:inherit; word-spacing: 3px; line-height: 22px;">
+				Loveonly believes in the hard-work, enduring, happy, laugh-out-loud, life-enriching definition of love. A diamond is our expression.
+				<br><br> Our mission is to launch the world’s first shared asset economy, and to serve consumers and promote love by providing an informed and secure trading platform where a diamond, and the love we invest in buying them, will only appreciate.
+
+				<br><br> Our vision is to stimulate the diamond industry with cutting edge, blockchain technology, provide transparency and security to all through a secondary market, and unlock the liquidity and divisibility of diamond assets. Every diamond is loveonly, invest in love.
+
+				<br><br> We value Love in Action, Ownership, and Delivery. “I love you” is an expression that shows in your actions every day. Work, travel, and life are love, only. We strive to own every moment of every day and show that in everything we do. In this way delivering to you a beautiful diamond expression that appreciates with time is our passionate pursuit.
+
+				<br><br> Invest with us and become a part of our team. We want to hear your story, learn from your experience, and share the love you carry with you.
+
+				<br><br> Love, <br><br><br>Sunny Jiang (Founder and lead love evangelist)</h4>
+				<button style="color: white; font-size: 15px; padding: 10px 30px; position: relative; left:40%; ">INVEST</button>
+		</div>
+	</div>
+
+
+
+	<footer>
+		<div id="btnline"></div>
+		<div style="position: relative; left: 30%; top: 15%; ">
+			<h5 style="line-height: 40px;">support@loveonly.love <br> Tel: 905 530 2124 675 <br> Cochran Dr. Markham ON <br> L3R 0A8</h5>
+			<h2>SOCIAL
+				<i class="fab fa-facebook-square"></i>
+				<i class="fab fa-linkedin"></i>
+				<i class="fab fa-weixin"></i></h2>
+		</div>
+		<br>
+		<br>
+		<br>
+		<h3 style="position:relative; top:20px;">© 2018 by Loveonly, INC all rights reserved. </h3>
+	</footer>
+
+	<!-- jQuery -->
+	<script src="./jquery/jquery-3.3.1.js"></script>
+	<!--slickjs-->
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			var navtop = $("#cos-nav").offset().top;
+			$(document).scroll(function() {
+				var scroltop = $(document).scrollTop();
+				if (scroltop > navtop) {
+					$("#cos-nav").addClass("sticky");
+					$("#Logo").addClass("float-left");
+					$("#menu").addClass("menu-change");
+					$("#navbutton").addClass("button-pop");
+					$("#navbutton").removeClass("button-hidden");
+				} else {
+					$("#cos-nav").removeClass("sticky");
+					$("#Logo").removeClass("float-left");
+					$("#menu").removeClass("menu-change");
+					$("#navbutton").removeClass("button-pop");
+					$("#navbutton").addClass("button-hidden");
+				}
+			})
+
+			$("#navbutton>i").click(function() {
+				$("#navlist").toggle(400);
+			})
+
+			//		$("[data-toggle='tooltip']").tooltip();
+
+			$('.sliders').slick({
+				lazyLoad: 'ondemand',
+				infinite: true,
+				slidesToShow: 5,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				responsive: [{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 3,
+							slidesToScroll: 3,
+							infinite: true,
+							dots: true
+						}
+					},
+					{
+						breakpoint: 600,
+						settings: {
+							slidesToShow: 2,
+							slidesToScroll: 2
+						}
+					},
+					{
+						breakpoint: 480,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1
+						}
+					}
+					// You can unslick at a given breakpoint now by adding:
+					// settings: "unslick"
+					// instead of a settings object
+				]
+			});
+
+
+			$(".slider").hover(function() {
+				$(this).find("div").fadeIn(500);
+			}, function() {
+				$(this).find("div").fadeOut(500);
+			});
+
+		})
+
+	</script>
+</body>
+
+</html>
